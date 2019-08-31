@@ -5,6 +5,8 @@
                 v-for="(tab, index) in tabs" v-bind:key="index"
                 :class="[{ 'w-full text-center' : fill }, { 'border-gray-300 bg-white rounded-t': tab.isActive }]"
             >
+                <a class="block px-6 py-3 text-gray-700 cursor-pointer" role="tab"
+                   @click.prevent="activeTab = tab"
                 <a class="block px-6 py-2 text-gray-700 active:outline-none" href="javascript:" role="tab"
                    @click="activeTab = tab"
                    :aria-controls="`${id}-${index}-panel`" :aria-selected="tab.isActive.toString()" :id="`${id}-${index}-tab`"

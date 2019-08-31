@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 py-4 bg-white border border-b-0 shadow-lg" role="tabpanel"
+    <div class="px-6 pt-6 pb-4 bg-white border border-b-0 rounded-b shadow-lg" role="tabpanel"
          v-show="isActive"
          :id="id" :aria-labelledby="`${id}-tab`"
     >
