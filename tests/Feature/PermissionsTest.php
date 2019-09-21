@@ -45,9 +45,9 @@ class PermissionsTest extends TestCase
             factory(User::class)->state('administrator')->create()
         );
         $this->assertTrue(true);
-        /*$response = $this->get(route('admin.home'));
+        $response = $this->get(route('admin.home'));
         $response
-            ->assertOk();*/
+            ->assertOk();
     }
 
     /**
@@ -60,9 +60,9 @@ class PermissionsTest extends TestCase
         $this->signIn(
             factory(User::class)->state('administrator')->create()
         );
-        $this->assertTrue(true);
-        /*$this->get(route('home'))
-             ->assertOk();*/
+
+        $this->get(route('home'))
+             ->assertOk();
     }
 
     /**
@@ -75,9 +75,9 @@ class PermissionsTest extends TestCase
         $this->signIn(
             factory(User::class)->state('user')->create()
         );
-        $this->assertTrue(true);
-        /*$this->get(route('home'))
-             ->assertOk();*/
+
+        $this->get(route('home'))
+             ->assertOk();
     }
 
     /**
