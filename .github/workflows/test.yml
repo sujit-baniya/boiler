@@ -16,9 +16,5 @@ jobs:
     - name: Create DB and schemas
       run: |
         php artisan migrate --seed
-    - name: Publish vendor files
-      run: php artisan vendor:publish --all
-    - name: Install Dependencies (Node packages)
-      run: npm install
     - name: Run Tests
       run: vendor/bin/phpunit
