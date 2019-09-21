@@ -44,13 +44,8 @@ class PermissionsTest extends TestCase
             factory(User::class)->state('administrator')->create()
         );
 
-        try {
-            $this->get(route('admin.home'))
-                ->assertOk();
-        } catch (\Exception $e)
-        {
-            $this->assertEquals('test', $e->getMessage());
-        }
+        $this->get(route('admin.home'))
+             ->assertOk();
     }
 
     /**
