@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
@@ -44,8 +45,10 @@ class PermissionsTest extends TestCase
             factory(User::class)->state('administrator')->create()
         );
 
-        $this->get(route('admin.home'))
-             ->assertOk();
+        $response = $this->get(route('admin.home'));
+        Log::info($response->getContent());
+        $response
+            ->assertOk();
     }
 
     /**
