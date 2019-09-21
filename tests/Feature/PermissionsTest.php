@@ -46,7 +46,7 @@ class PermissionsTest extends TestCase
         );
 
         $response = $this->get(route('admin.home'));
-        Log::info($response->getContent());
+        dd($response);
         $response
             ->assertOk();
     }
