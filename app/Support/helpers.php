@@ -1,6 +1,41 @@
 <?php
 
 use Illuminate\Support\Facades\Request;
+use App\Services\Address\Country\Country;
+use App\Services\Address\Country\CountryLoader;
+
+if (!function_exists('country'))
+{
+    /**
+     * Get the country by it's ISO 3166-1 alpha-2.
+     *
+     * @param string $code
+     * @param bool $hydrate
+     *
+     * @return Country|mixed
+     * @throws Exception
+     */
+    function country($code, $hydrate = true)
+    {
+        return CountryLoader::country($code, $hydrate);
+    }
+}
+
+if (!function_exists('countries'))
+{
+    /**
+     * Get all countries short-listed.
+     *
+     * @param bool $longlist
+     * @param bool $hydrate
+     *
+     * @return array
+     */
+    function countries($longlist = false, $hydrate = false)
+    {
+        return CountryLoader::countries($longlist, $hydrate);
+    }
+}
 
 if (! function_exists('active')) {
     /**
