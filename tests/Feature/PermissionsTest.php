@@ -41,6 +41,8 @@ class PermissionsTest extends TestCase
      */
     public function testAdminCanAccessAdminDashboard()
     {
+        $packagePublicDir = public_path();
+        $this->app->instance('path.public', $packagePublicDir);
         $this->signIn(
             factory(User::class)->state('administrator')->create()
         );
@@ -57,6 +59,8 @@ class PermissionsTest extends TestCase
      */
     public function testAdminCanAccessHome()
     {
+        $packagePublicDir = public_path();
+        $this->app->instance('path.public', $packagePublicDir);
         $this->signIn(
             factory(User::class)->state('administrator')->create()
         );
@@ -72,6 +76,8 @@ class PermissionsTest extends TestCase
      */
     public function testUserCanAccessHome()
     {
+        $packagePublicDir = public_path();
+        $this->app->instance('path.public', $packagePublicDir);
         $this->signIn(
             factory(User::class)->state('user')->create()
         );
@@ -87,6 +93,8 @@ class PermissionsTest extends TestCase
      */
     public function testUserMustLoginToAccessAdminDashboard()
     {
+        $packagePublicDir = public_path();
+        $this->app->instance('path.public', $packagePublicDir);
         $this->get(route('admin.home'))
              ->assertRedirect(route('login'));
     }
@@ -98,6 +106,8 @@ class PermissionsTest extends TestCase
      */
     public function testUserCannotAccessAdminDashboard()
     {
+        $packagePublicDir = public_path();
+        $this->app->instance('path.public', $packagePublicDir);
         $this->signIn(
             factory(User::class)->state('user')->create()
         );
