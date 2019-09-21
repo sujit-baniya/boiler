@@ -14,6 +14,8 @@ jobs:
     - name: Install Dependencies (PHP vendors)
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
     - name: Create DB and schemas
-      run: php artisan migrate
+      run: |
+        php artisan migrate
+        php artisan db:seed
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: vendor/bin/phpunit
