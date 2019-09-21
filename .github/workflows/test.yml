@@ -16,4 +16,4 @@ jobs:
     - name: Create DB and schemas
       run: |
         php artisan migrate --seed
-        php artisan vendor:publish --all && vendor/bin/phpunit
+        php artisan vendor:publish --all && npm install && vendor/bin/phpunit
