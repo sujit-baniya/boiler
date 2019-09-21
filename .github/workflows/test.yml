@@ -17,5 +17,4 @@ jobs:
       run: |
         php artisan vendor:publish --all
         php artisan migrate --seed
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
-      run: vendor/bin/phpunit
+        vendor/bin/phpunit
