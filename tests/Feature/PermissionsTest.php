@@ -21,7 +21,7 @@ class PermissionsTest extends TestCase
      * @return void
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    protected function setUp(): void
+    protected function setUp(): voi
     {
         parent::setUp();
 
