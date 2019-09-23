@@ -19,6 +19,7 @@ class PermissionsTest extends TestCase
      * Setup the test environment.
      *
      * @return void
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     protected function setUp(): void
     {
